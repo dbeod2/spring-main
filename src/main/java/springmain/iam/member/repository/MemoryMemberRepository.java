@@ -1,4 +1,6 @@
-package springmain.iam.member;
+package springmain.iam.member.repository;
+
+import springmain.iam.member.Member;
 
 import java.util.HashMap;
 import java.util.Map;
