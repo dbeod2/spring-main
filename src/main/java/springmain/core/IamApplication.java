@@ -1,4 +1,4 @@
-package springmain.iam;
+package springmain.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

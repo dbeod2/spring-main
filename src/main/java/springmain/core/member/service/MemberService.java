@@ -1,6 +1,6 @@
-package springmain.iam.member.service;
+package springmain.core.member.service;
 
-import springmain.iam.member.Member;
+import springmain.core.member.Member;
 
 public interface MemberService {
   void join(Member member);

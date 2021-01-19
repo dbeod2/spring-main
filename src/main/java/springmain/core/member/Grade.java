@@ -1,4 +1,4 @@
-package springmain.iam.member;
+package springmain.core.member;
 
 public enum Grade {
   BASIC, VIP

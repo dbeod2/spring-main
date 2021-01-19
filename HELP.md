@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'spring-main.iam' is invalid and this project uses 'springmain.iam' instead.
+* The original package name 'spring-main.iam' is invalid and this project uses 'springmain.core' instead.
 
 # Getting Started
 

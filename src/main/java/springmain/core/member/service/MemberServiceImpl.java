@@ -1,8 +1,8 @@
-package springmain.iam.member.service;
+package springmain.core.member.service;
 
-import springmain.iam.member.Member;
-import springmain.iam.member.repository.MemberRepository;
-import springmain.iam.member.repository.MemoryMemberRepository;
+import springmain.core.member.Member;
+import springmain.core.member.repository.MemberRepository;
+import springmain.core.member.repository.MemoryMemberRepository;
 
 public class MemberServiceImpl implements MemberService {
   private final MemberRepository memberRepository = new MemoryMemberRepository();

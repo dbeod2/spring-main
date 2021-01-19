@@ -1,6 +1,6 @@
-package springmain.iam.member.repository;
+package springmain.core.member.repository;
 
-import springmain.iam.member.Member;
+import springmain.core.member.Member;
 
 public interface MemberRepository {
 
