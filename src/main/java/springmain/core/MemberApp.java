@@ -2,13 +2,14 @@ package springmain.core;
 
 import springmain.core.member.Grade;
 import springmain.core.member.Member;
+import springmain.core.member.repository.MemoryMemberRepository;
 import springmain.core.member.service.MemberService;
 import springmain.core.member.service.MemberServiceImpl;
 
 public class MemberApp {
 
   public static void main(String[] args) {
-    MemberService memberService = new MemberServiceImpl();
+    MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
     Member member = new Member(1L, "memberA", Grade.VIP);
     memberService.join(member);
 

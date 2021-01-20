@@ -12,8 +12,8 @@ import springmain.core.order.service.OrderServiceImpl;
 
 public class OrderServiceTest {
 
-  MemberService memberService = new MemberServiceImpl();
-  OrderService orderService = new OrderServiceImpl();
+  MemberService memberService = new MemberServiceImpl(memberRepository);
+  OrderService orderService = new OrderServiceImpl(memberRepository, discountPolicy);
 
   @Test
   public void createOrder() {
