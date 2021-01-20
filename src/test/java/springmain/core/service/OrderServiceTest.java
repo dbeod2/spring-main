@@ -1,21 +1,26 @@
 package springmain.core.service;
 
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import springmain.core.discount.FixDiscountPolicy;
+import springmain.core.AppConfig;
 import springmain.core.member.Grade;
 import springmain.core.member.Member;
-import springmain.core.member.repository.MemoryMemberRepository;
 import springmain.core.member.service.MemberService;
-import springmain.core.member.service.MemberServiceImpl;
 import springmain.core.order.Order;
 import springmain.core.order.service.OrderService;
-import springmain.core.order.service.OrderServiceImpl;
 
 public class OrderServiceTest {
 
-  MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
-  OrderService orderService = new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+  MemberService memberService;
+  OrderService orderService;
+
+  @BeforeEach
+  public void beforeEach() {
+    AppConfig appConfig = new AppConfig();
+    memberService = appConfig.memberService();
+    orderService = appConfig.orderService();
+  }
 
   @Test
   public void createOrder() {

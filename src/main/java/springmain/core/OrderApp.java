@@ -1,19 +1,16 @@
 package springmain.core;
 
-import springmain.core.discount.FixDiscountPolicy;
 import springmain.core.member.Grade;
 import springmain.core.member.Member;
-import springmain.core.member.repository.MemoryMemberRepository;
 import springmain.core.member.service.MemberService;
-import springmain.core.member.service.MemberServiceImpl;
 import springmain.core.order.Order;
 import springmain.core.order.service.OrderService;
-import springmain.core.order.service.OrderServiceImpl;
 
 public class OrderApp {
   public static void main(String[] args) {
-    MemberService memberService = new MemberServiceImpl(new MemoryMemberRepository());
-    OrderService orderService = new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+    AppConfig appConfig = new AppConfig();
+    MemberService memberService = appConfig.memberService();
+    OrderService orderService = appConfig.orderService();
 
     Long memberId = 1L;
     Member member = new Member(memberId, "memberA", Grade.VIP);
