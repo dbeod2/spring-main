@@ -7,11 +7,19 @@ import springmain.core.member.service.MemberServiceImpl;
 import springmain.core.order.service.OrderServiceImpl;
 
 public class AppConfig {
+  private MemoryMemberRepository memberRepository() {
+    return new MemoryMemberRepository();
+  }
+
   public MemberService memberService() {
-    return new MemberServiceImpl(new MemoryMemberRepository()); // 생성자 주입
+    return new MemberServiceImpl(memberRepository()); // 생성자 주입
+  }
+
+  private FixDiscountPolicy discountPolicy() {
+    return new FixDiscountPolicy();
   }
 
   public OrderServiceImpl orderService() {
-    return new OrderServiceImpl(new MemoryMemberRepository(), new FixDiscountPolicy());
+    return new OrderServiceImpl(memberRepository(), discountPolicy());
   }
 }
