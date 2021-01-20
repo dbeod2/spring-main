@@ -4,7 +4,6 @@ import springmain.core.discount.FixDiscountPolicy;
 import springmain.core.member.repository.MemoryMemberRepository;
 import springmain.core.member.service.MemberService;
 import springmain.core.member.service.MemberServiceImpl;
-import springmain.core.order.service.OrderService;
 import springmain.core.order.service.OrderServiceImpl;
 
 public class AppConfig {
