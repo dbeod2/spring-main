@@ -1,5 +1,7 @@
 package springmain.core;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import springmain.core.member.Grade;
 import springmain.core.member.Member;
 import springmain.core.member.service.MemberService;
@@ -8,9 +10,15 @@ import springmain.core.order.service.OrderService;
 
 public class OrderApp {
   public static void main(String[] args) {
-    AppConfig appConfig = new AppConfig();
-    MemberService memberService = appConfig.memberService();
-    OrderService orderService = appConfig.orderService();
+  /*
+    applicationContext spring container라고 함
+    @Configuration이 붙은 appconfig설정 정보로 사용
+    스프링 컨테이너에 객체를 스프링 빈으로 등록, 스프링 컨테이너에서 스프링 빈을 찾아서 사용하도록 변경
+   */
+
+    ApplicationContext applicationContext = new AnnotationConfigApplicationContext(AppConfig.class);
+    MemberService memberService = applicationContext.getBean("memberService", MemberService.class);
+    OrderService orderService = applicationContext.getBean("orderService", OrderService.class);
 
     Long memberId = 1L;
     Member member = new Member(memberId, "memberA", Grade.VIP);
