@@ -1,6 +1,7 @@
 package springmain.core;
 
-import springmain.core.discount.FixDiscountPolicy;
+import springmain.core.discount.DiscountPolicy;
+import springmain.core.discount.RateDiscountPolicy;
 import springmain.core.member.repository.MemoryMemberRepository;
 import springmain.core.member.service.MemberService;
 import springmain.core.member.service.MemberServiceImpl;
@@ -15,8 +16,8 @@ public class AppConfig {
     return new MemberServiceImpl(memberRepository()); // 생성자 주입
   }
 
-  private FixDiscountPolicy discountPolicy() {
-    return new FixDiscountPolicy();
+  private DiscountPolicy discountPolicy() {
+    return new RateDiscountPolicy();
   }
 
   public OrderServiceImpl orderService() {
