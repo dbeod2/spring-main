@@ -25,4 +25,6 @@ public class ConfigurationSingletonTest {
     assertThat(memberService.getMemberRepository()).isSameAs(memberRepository);
     assertThat(orderService.getMemberRepository()).isSameAs(memberRepository);
   }
+
+
 }
